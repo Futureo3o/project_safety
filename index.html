@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>세이프티 - 내 주변 대피소 찾기</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- 헤더 영역 -->
+    <header>
+      <div class="logo">세이프티</div>
+      <!-- <nav>
+        <a href="#">안전시설</a>
+        <a href="#">행동요령</a>
+        <a href="#">응급처치</a>
+      </nav> -->
+    </header>
+
+    <!-- 메인 콘텐츠 영역 -->
+    <main>
+      <div id="map_wrap">
+        <section id="map_list">
+          <!-- <form method="get" action="">
+            <input
+              type="text"
+              id="search"
+              placeholder="ex) 지진, 해일, 무더위..."
+            />
+            <i class="fa-solid fa-magnifying-glass fa-lg" id="submit"></i>
+          </form> -->
+          <div id="sel">
+            <div>
+              <select id="ctprvn">
+                <option selected disabled>시/도 선택</option>
+              </select>
+              <select id="sgg">
+                <option selected disabled>시/군/구 선택</option>
+              </select>
+            </div>
+            <select id="safty">
+              <option value="지진옥외">지진 옥외대피장소</option>
+              <option value="무더위">무더위 쉼터</option>
+              <option value="지진해일">지진해일 긴급대피장소</option>
+              <option value="임시주거">임시 주거시설</option>
+              <!-- <option value="민방위">민방위 대피시설</option>
+              <option value="산사태">산사태 대피소</option>
+              <option value="화학사고">화학사고 대피장소</option>
+              <option value="한파">한파 쉼터</option>
+              <option value="미세먼지">미세먼지 쉼터</option>
+              <option value="응급의료">응급의료센터</option>
+              <option value="병원">병원</option>
+              <option value="약국">약국</option>
+              <option value="혈액원">혈액원</option>
+              <option value="소방서">소방서</option>
+              <option value="경찰서">경찰서</option>
+              <option value="해양경찰서">해양경찰서</option> -->
+            </select>
+          </div>
+          <div id="btn">
+            <button id="myLocationBtn"><b>내 위치</b></button>
+            <button id="fetchBtn"><b>조회</b></button>
+            <!-- <select>
+              <option value="대피">대피시설</option>
+              <option value="급수">급수시설</option>
+            </select> -->
+          </div>
+          <div id="li_wrap">
+            <ul id="shelter-list">
+              <!-- <li>
+                      <div>
+                          <h3>구로구청 본관 지하 1층</h3>
+                          <p>서울특별시 구로구 가마산로 245-0 (구로동)</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </li>
+                    <li>
+              <div>
+                <h3>구로아트밸리지하주차장(지하1~3층)</h3>
+                <p>서울특별시 구로구 가마산로25길 21 (구로동, 구로구민회관)</p>
+            </div>
+              <i class="fa-solid fa-chevron-right"></i>
+            </li>
+            <li>
+              <div>
+                  <h3>신안타워 지하 2~4층 주차장</h3>
+                <p>서울특별시 구로구 구로중앙로 68 (구로동, 신안타워)</p>
+            </div>
+              <i class="fa-solid fa-chevron-right"></i>
+            </li>
+            <li>
+                <div>
+                    <h3>미성빌딩 지하1층 주차장</h3>
+                    <p>서울특별시 구로구 가마산로 242 (구로동)</p>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </li>
+            <li>
+                <div>
+                    <h3>대림오페라타워 지하주차장(지하2~5층)</h3>
+                    <p>서울특별시 구로구 구로중앙로 60 (구로동, 대림오페라타워)</p>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </li> -->
+            </ul>
+          </div>
+          <div id="pop">
+            <table>
+              <tbody>
+                <tr>
+                  <th>시설명</th>
+                  <td>영림중학교 운동장</td>
+                </tr>
+                <tr>
+                  <th>주소</th>
+                  <td>서울특별시 구로구 가마산로27길</td>
+                </tr>
+                <tr>
+                  <th>시설구분</th>
+                  <td>학교운동장</td>
+                </tr>
+                <tr>
+                  <th>전화번호</th>
+                  <td>02-860-3347</td>
+                </tr>
+                <tr>
+                  <th>시설면적</th>
+                  <td>5080㎡</td>
+                </tr>
+                <tr>
+                  <th>최대수용인원</th>
+                  <td>6157명</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="map-container">
+          <div id="map"></div>
+        </section>
+      </div>
+    </main>
+    <!-- 푸터 영역 -->
+    <footer>
+      <p>긴급 연락처 : 119, 112</p>
+      <p>© 2024 세이프티. All rights reserved.</p>
+    </footer>
+
+    <script
+      type="text/javascript"
+      src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=8900b86598ac8014d80bf21cdba2ed88"
+    ></script>
+    <script src="javascript.js"></script>
+  </body>
+</html>

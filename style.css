@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/* 기본 스타일 */
+body {
+  font-family: "Noto Sans", sans-serif;
+  color: #333;
+}
+
+/* 헤더 스타일 */
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+}
+
+header .logo {
+  font-size: 28px;
+  font-weight: bold;
+  cursor: none;
+  display: flex;
+  justify-content: center;
+}
+
+/* nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+} */
+
+/* 메인 콘텐츠 스타일 */
+main {
+  padding: 20px;
+}
+
+#map_wrap {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#map_list {
+  width: 25%;
+}
+
+/* #map_list form {
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-solid {
+  color: #666;
+  cursor: pointer;
+}
+
+#map_list input {
+  border-color: #dddddd;
+  border-radius: 20px;
+  height: 30px;
+  width: 80%;
+  margin-right: 10px;
+  padding-left: 12px;
+} */
+
+#sel {
+  display: flex;
+  justify-content: space-between;
+}
+
+#map_list select {
+  height: 30px;
+}
+
+#ctprvn {
+  width: 140px;
+}
+
+#sgg {
+  margin: 0 10px;
+  width: 110px;
+}
+
+#place {
+  width: 170px;
+}
+
+#btn {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+#btn button {
+  font-size: 15px;
+  background-color: #007bff;
+  color: white;
+  border: 0;
+  border-radius: 2px;
+  width: 70px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#li_wrap {
+  height: 620px;
+  overflow: auto;
+}
+#li_wrap::-webkit-scrollbar {
+  width: 20px;
+}
+#li_wrap::-webkit-scrollbar-track {
+  background-color: #efefef;
+}
+#li_wrap::-webkit-scrollbar-thumb {
+  background-color: #d1e1f2;
+}
+#li_wrap::-webkit-scrollbar-button {
+  display: none;
+}
+
+#map_list li {
+  padding: 10px;
+  border-bottom: solid #dddddd 1px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#map_list li:hover {
+  background-color: #d1e1f2;
+}
+
+#map_list h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+#map_list p {
+  color: #555;
+  font-size: 12px;
+}
+
+.fa-chevron-right {
+  right: 0;
+}
+
+#pop {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 700px;
+  background-color: white;
+  border: 1px solid red;
+}
+
+#map-container {
+  width: 72%;
+  height: 80vh;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* 푸터 스타일 */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
