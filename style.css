@@ -110,7 +110,7 @@ main {
 }
 
 #li_wrap {
-  height: 620px;
+  height: 660px;
   overflow: auto;
 }
 #li_wrap::-webkit-scrollbar {
