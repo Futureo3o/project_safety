@@ -10,7 +10,7 @@ $(document).ready(function () {
   const mapContainer = document.getElementById("map");
   const mapOption = {
     center: new kakao.maps.LatLng(37.5665, 126.978), // 초기 중심 좌표 (서울시청)
-    level: 7, // 초기 확대 레벨
+    level: 10, // 초기 확대 레벨
   };
   const map = new kakao.maps.Map(mapContainer, mapOption);
 
