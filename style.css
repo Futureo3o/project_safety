@@ -112,6 +112,7 @@ main {
 #li_wrap {
   height: 660px;
   overflow: auto;
+  border-top: solid #dddddd 1px;
 }
 #li_wrap::-webkit-scrollbar {
   width: 20px;
